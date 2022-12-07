@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device–width ,initial–scale=1-0" />
 	<script language="javascript" type="text/javascript" src="javascript.js"></script>
 	<meta charset="utf-8">
 	<titel>
