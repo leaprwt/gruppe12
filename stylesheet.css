@@ -10,3 +10,33 @@ width: device-width;
 min-zoom: 1;
 max-zoom: 2;
 }
+
+body {
+  font-size: small;
+  font-family: Verdana, sans-serif;
+}
+
+#navibereich li {
+  display: inline;            /* Listenelemente nebeneinander */
+  list-style-type: none;      /* Aufzählungszeichen entfernen */
+}
+
+
+#navibereich {
+  background-color: #89CFF0;        /* Hintergrundfarbe für die Navigation */ 
+  padding: 4px 4;                   /* Innenabstand: oben/unten 4px, li/re 0 */
+  border-top: 3px solid #27377c;    /* Rahmenlinie oben */
+  border-bottom: 3px solid #27377c; /* Rahmenlinie unten */
+  margin: 0;                        /* Keinen Außenabstand */ 
+}
+
+#navibereich a {
+  color: black;                  /* Schriftfarbe schwarz */ 
+  text-decoration: none;         /* Unterstreichung entfernen */ 
+  padding: 100px 40px;              /* oben/unten 4px, re/li 8px */
+}
+
+#navibereich a:hover {
+	cursor: pointer;
+  background-color: #34619c;
+}
