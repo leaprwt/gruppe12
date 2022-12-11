@@ -36,7 +36,7 @@
 	<nav> 
 		
 	<ul>
-  		<li><a href="">Gasverbräche</a></li>
+  		<li><a href="">Gasverbräuche</a></li>
   		<li><a href="">Stromverbräche</a></li>
  		<li><a href="">Kategorien</a></li>
   		<li><a href="">Tipps zum Gas einsparen</a></li>
