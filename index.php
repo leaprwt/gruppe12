@@ -2,15 +2,21 @@
 <html>
 <head>
 	
+	<meta name="viewport" content="width=device–width ,initial–scale=1-0" />
+	
+	
 <script language="javascript" type="text/javascript" src="javascript.js"></script>
-
+	<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	
 <meta charset="utf-8">
+	
 
 <title>Gruppe12</title>
 	
 </head>
 
 <body>
+	
 	
 	<?php
 	
@@ -35,15 +41,15 @@
 				
 	<nav> 
 		
-	<ul>
-  		<li><a href="">Gasverbräuche</a></li>
-  		<li><a href="">Stromverbräche</a></li>
- 		<li><a href="">Kategorien</a></li>
-  		<li><a href="">Tipps zum Gas einsparen</a></li>
-		<li><a href="">Tipps zum Strom einsparen</a></li>
-  		<li><a href="">Auswertung für den Gasverbrauch</a></li>
- 		<li><a href="">Auswertung für den Stromverbrauch</a></li>
-	</ul>
+		<ul id="navibereich">
+  	<li id="navi01"><a href="gasverbräuche.php">Gasverbräuche</a></li>
+  	<li id="navi02"><a href="stromverbräuche.php">Stromverbräuche</a></li>
+	<li id="navi03"><a href="kategorien.php">Kategorien</a></li>
+	<li id="navi04"><a href="tippszumgaseinsparen.php">Tipps zum Gas einsparen</a></li>
+	<li id="navi05"><a href="tippszumgaseinsparen.php">Tipps zum Strom einsparen</a></li>
+	<li id="navi06"><a href="auswertung für gasverbrauch.php">Auswertung für den Gasverbrauch</a></li>
+	<li id="navi07"><a href="auswertung für den stromverbrauch.php">Auswertung für den Stromverbrauch</a></li>
+</ul>
 	
 	</nav>
 	
