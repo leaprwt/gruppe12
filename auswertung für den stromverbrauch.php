@@ -1,0 +1,1 @@
+<p>Auswertung für den Stromverbrauch</p>
