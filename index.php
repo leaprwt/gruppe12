@@ -2,14 +2,10 @@
 <html>
 <head>
 	
-	<meta name="viewport" content="width=device–width ,initial–scale=1-0" />
-	
-	
 <script language="javascript" type="text/javascript" src="javascript.js"></script>
-	<link href="stylesheet.css" rel="stylesheet" type="text/css">
-	
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
 <meta charset="utf-8">
-	
 
 <title>Gruppe12</title>
 	
@@ -17,41 +13,45 @@
 
 <body>
 	
-	
+
+
 	<?php
 	
-	$servername = "localhost";
-	$user = "m11575-30";
-	$pw = "FrLAwd2QV";
 	
-	$con = new mysqli($servername, $user, $pw);
+$servername = "localhost";
+$username = "m11575-30";
+$password = "FrLAwd2QV";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+?>
 	
-	if($con->connect_error) {
-		die("death".$con->connect_error);
-	}
-	echo "connected";
-	
-	?>
-	
-	<h1>hallo du Karlo</h1>
+	<div class="header">
+		<h1>Strom- und Gasverbräuche</h1>
+	</div>
 	
 	<input type="datetime-local" value="">
 	
-	<section class="header"></section>
-				
+	
 	<nav> 
 		
 		<ul id="navibereich">
-  	<li id="navi01"><a href="gasverbräuche.php">Gasverbräuche</a></li>
-  	<li id="navi02"><a href="stromverbräuche.php">Stromverbräuche</a></li>
+  	<li id="navi01"><a href="gasverbraeuche.php">Gasverbräuche</a></li>
+  	<li id="navi02"><a href="stromverbraeuche.php">Stromverbräuche</a></li>
 	<li id="navi03"><a href="kategorien.php">Kategorien</a></li>
-	<li id="navi04"><a href="tippszumgaseinsparen.php">Tipps zum Gas einsparen</a></li>
-	<li id="navi05"><a href="tippszumgaseinsparen.php">Tipps zum Strom einsparen</a></li>
-	<li id="navi06"><a href="auswertung für gasverbrauch.php">Auswertung für den Gasverbrauch</a></li>
-	<li id="navi07"><a href="auswertung für den stromverbrauch.php">Auswertung für den Stromverbrauch</a></li>
+	<li id="navi04"><a href="gaseinsparen.php">Tipps Gas einsparen</a></li>
+	<li id="navi05"><a href="stromeinsparen.php">Tipps Strom einsparen</a></li>
+	<li id="navi06"><a href="auswertunggas.php">Auswertung Gasverbrauch</a></li>
+	<li id="navi07"><a href="auswertungstrom.php">Auswertung Stromverbrauch</a></li>
 </ul>
 	
 	</nav>
+	
+	
 	
 	<p>Stromverbrauch Tabelle</p>
 		<form action="index.php" method="post">

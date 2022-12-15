@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Kategorien</title>
+<title>Tipps zum Strom einsparen</title>
 </head>
 
 <body>

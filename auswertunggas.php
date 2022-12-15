@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Kategorien</title>
+<title>Auswertung zum Gasverbrauch</title>
 </head>
 
 <body>
