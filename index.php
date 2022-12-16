@@ -89,13 +89,11 @@ echo date("d.m.Y h:i:s", $d);
 			<p><input name ="motivation"> Motivationsspruch</p>
 			<p><input name ="hinweis"> Hinweis</p>
 			<p><input name ="medaille"> Medaille</p>
-			
-			<?php
+		
+		</form>
+	
+	<?php
 			echo Emoji::grinningFace(); //displays ?
 			?>
-			
-		
-	
-		</form>
 </body>
 </html>
