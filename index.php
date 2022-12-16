@@ -1,5 +1,4 @@
-<!doctype html>
-<html>
+
 <head>
 	
 <script language="javascript" type="text/javascript" src="javascript.js"></script>
@@ -67,4 +66,4 @@ if ($conn->connect_error) {
 	
 		</form>
 </body>
-</html>
+
