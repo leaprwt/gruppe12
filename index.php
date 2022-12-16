@@ -1,4 +1,5 @@
 
+<html>
 <head>
 	
 <script language="javascript" type="text/javascript" src="javascript.js"></script>
@@ -15,19 +16,37 @@
 
 
 	<?php
-	
-	
-$servername = "localhost";
-$username = "m11575-30";
-$password = "FrLAwd2QV";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+/*Verbindung zur Datenbank aufnehmen */
+
+$con = mysqli_connect("localhost", "m11575-30", "FrLAwd2QV", "m11575_30");
+
+	if ($con->connect_error) {
+		die("Connection failed: " . $con->connect_error);
+	}
+	
+	echo "Connected successfully";
+	
+// sql to create table
+$sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+
+if ($con->query($sql) === TRUE) {
+  echo "Table MyGuests created successfully";
+} else {
+  echo "Error creating table: " . $con->error;
 }
-?>
+
+$con->close();
+?>	
+
+	
+	
 	
 	<div class="header">
 		<h1>Strom- und Gasverbräuche</h1>
@@ -66,4 +85,4 @@ if ($conn->connect_error) {
 	
 		</form>
 </body>
-
+</html>
