@@ -1,8 +1,8 @@
 <?php
-	
-$d = time();                   
-$d = strtotime("+1 days", $d); 
-echo date("d.m.Y h:i:s", $d);
-	
-	
-	?>
+		 $datum = date("d.m.Y",$timestamp);
+			echo $datum;
+			?> -
+		<?php
+		 		$uhrzeit = date("H:i",$timestamp);
+				echo $uhrzeit;
+			?>
