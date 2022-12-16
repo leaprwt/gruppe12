@@ -90,6 +90,10 @@ echo date("d.m.Y h:i:s", $d);
 			<p><input name ="hinweis"> Hinweis</p>
 			<p><input name ="medaille"> Medaille</p>
 			
+			<?php
+			echo Emoji::grinningFace(); //displays ?
+			?>
+			
 		
 	
 		</form>
