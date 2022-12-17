@@ -16,44 +16,59 @@
 
 
 	<?php
-
-/*Verbindung zur Datenbank aufnehmen */
-
-$con = mysqli_connect("localhost", "m11575-30", "FrLAwd2QV", "m11575_30");
-
-	if ($con->connect_error) {
-		die("Connection failed: " . $con->connect_error);
-	}
+	    include 'dbconnect.inc.php';
+		echo "Connected successfully";
 	
-	echo "Connected successfully";
-	
-// sql to create table
-$sql = "CREATE TABLE MyGuests (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-firstname VARCHAR(30) NOT NULL,
-lastname VARCHAR(30) NOT NULL,
-email VARCHAR(50),
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)";
 
-if ($con->query($sql) === TRUE) {
-  echo "Table MyGuests created successfully";
-} else {
-  echo "Error creating table: " . $con->error;
-}
+   /* SQL-Abfrage ausführen */
+   $res = mysqli_query($con, "SELECT * FROM stromverbrauch");
+		echo "ja";
 
-$con->close();
-?>	
+    /* Anzahl Datensätze ermitteln und ausgeben */
+   $num = mysqli_num_rows($res);
+   if($num > 0) echo "Ergebnis:<br>";
+   else         echo "Keine Ergebnisse<br>";
 
-	
-	
+   echo "<table border='1'>";
+   
+   // Überschrift
+   echo "<tr>
+   		<td>Ablesedatum</td>
+   		<td>kwh</td>
+		<td>Entstandene Kosten</td>
+		<td>Tendenzsymbol</td>
+		<td>Motivationsspruch</td>
+		<td>Hinweis</td>
+		<td>Medaille</td>
+		
+		
+		</tr>";
+   
+   
+   
+   /* Datensätze aus Ergebnis ermitteln, */
+   /* in Array speichern und ausgeben    */
+   
+   while ($dsatz = mysqli_fetch_assoc($res))
+   {
+       echo "<tr>";
+       echo "<td>" . $dsatz["Ablesedatum"] . "</td>";
+       echo "<td>" . $dsatz["kwh"] . "</td>";
+	   echo "<td>" . $dsatz["Entstandene Kosten"] . "</td>";
+	   echo "<td>" . $dsatz["Tendenzsymbol"] . "</td>";
+	   echo "<td>" . $dsatz["Motivationsspruch"] . "</td>";
+	   echo "<td>" . $dsatz["Hinweis"] . "</td>";
+	   echo "<td>" . $dsatz["Medaille"] . "</td>";
+       echo "</tr>";
+   }
+
+?>
 	
 	<div class="header">
 		<h1>Strom- und Gasverbräuche</h1>
 	</div>
 	
 	<input type="datetime-local" value="">
-	
 	
 	
 	<nav> 
@@ -69,23 +84,6 @@ $con->close();
 </ul>
 	
 	</nav>
-	
-	
-	
-	<p>Stromverbrauch Tabelle</p>
-		<form action="index.php" method="post">
-			<p><input name ="ablesedatum"> Ablesedatum</p>
-			<p><input name ="kumulierterverbrauch"> Kumulierter Verbrauch</p>
-			<p><input name ="enstandenekosten"> Entstandene Kosten</p>
-			<p><input name ="tendenzsymbol"> Tendenzsymbol</p>
-			<p><input name ="motivation"> Motivationsspruch</p>
-			<p><input name ="hinweis"> Hinweis</p>
-			<p><input name ="medaille"> Medaille</p>
-		
-		</form>
-	
-	<?php
-			echo Emoji::grinningFace(); //displays ?
-			?>
+
 </body>
 </html>
