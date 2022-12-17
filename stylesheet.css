@@ -16,6 +16,16 @@ body {
   font-family: Verdana, sans-serif;
 }
 
+.header{ 
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("Gruppe12bild.jpg");
+    background-position:center;
+    background-size:cover;
+    position:relative;
+}
+
+
 #navibereich li {
   display: inline;            /* Listenelemente nebeneinander */
   list-style-type: none;      /* Aufzählungszeichen entfernen */
