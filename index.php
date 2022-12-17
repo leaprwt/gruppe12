@@ -66,6 +66,8 @@
 	
 	<div class="header">
 		<h1>Strom- und Gasverbräuche</h1>
+		<img src="Gruppe12bild.jpg"
+
 	</div>
 	
 	<input type="datetime-local" value="">
