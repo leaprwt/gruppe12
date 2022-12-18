@@ -15,21 +15,22 @@
 	
 
 
-	<?php
-	    include 'dbconnect.inc.php';
+<?php
+	include 'dbconnect.inc.php';
 		echo "Connected successfully";
 	
 
    /* SQL-Abfrage ausführen */
-   $res = mysqli_query($con, "SELECT * FROM stromverbrauch");
-		echo "ja";
+	$res = mysqli_query($con, "SELECT * FROM stromverbrauch");
+		echo "Funktioniert";
 
     /* Anzahl Datensätze ermitteln und ausgeben */
-   $num = mysqli_num_rows($res);
-   if($num > 0) echo "Ergebnis:<br>";
-   else         echo "Keine Ergebnisse<br>";
-
-   echo "<table border='1'>";
+	$num = mysqli_num_rows($res);
+   	if($num > 0)
+		echo "Ergebnis:<br>";
+   	else
+		echo "Keine Ergebnisse<br>";
+   			echo "<table border='1'>";
    
    // Überschrift
    echo "<tr>
@@ -65,24 +66,24 @@
 {
     /* Verbindung aufnehmen und Datenbank auswählen */
     /* Include der Datei mit den Datenbankzugriffen */
-    include '../dbconnect.inc.php'; 
+   include '../dbconnect.inc.php'; 
    $sql = "SELECT * FROM student WHERE matrikelnummer = "
       . $_POST["auswahl"];
    $res = mysqli_query($con, $sql);
    $dsatz = mysqli_fetch_assoc($res);
 
-   echo "<p>Bitte neue Inhalte eintragen und speichern:</p>";
-   echo "<form action = 'db_einzel_student_c.php' method = 'post'>";
+	   echo "<p>Bitte neue Inhalte eintragen und speichern:</p>";
+	   echo "<form action = 'db_einzel_student_c.php' method = 'post'>";
 
-   echo "<p><input name='name' value='"
-      . $dsatz["name"] . "'> Nachname</p>";
-   
-   echo "<p><input name='matrikelnummer' value='"
-      . $_POST["auswahl"] . "'> Matrikelnummer</p>";
-   
-   echo "<p><input type='submit' value='Speichern'>";
-   echo " <input type='reset'></p>";
-   echo "</form>";
+	   echo "<p><input name='name' value='"
+		  . $dsatz["name"] . "'> Nachname</p>";
+
+	   echo "<p><input name='matrikelnummer' value='"
+		  . $_POST["auswahl"] . "'> Matrikelnummer</p>";
+
+	   echo "<p><input type='submit' value='Speichern'>";
+	   echo " <input type='reset'></p>";
+	   echo "</form>";
    
    mysqli_close($con);
 }
@@ -91,38 +92,31 @@ else
 ?>
 	
 	
-/*	
 <h3>Geben Sie Ihre Stromverbräuche an</h3>
-<form name="myForm" action="connect.php" onsubmit="return validateForm()" method="post">
+<form name="myForm" action="/connect.php" method="post">
 	<fieldset>
 	<p>
 	<legend>Los:</legend>
-		Ablesedatum: <input type="text" id="ablesedatum">
+		Ablesedatum: <input name="ablesedatum" type="datetime-local" id="ablesedatum">
 		<p> 
-        kwh: <input type="text" id="kwh">
+        kwh: <input name="kwh" type="number" id="kwh">
 		</p>
-        Entstandene Kosten: <input type="text" id="entstandene">
+        Entstandene Kosten: <input name="entstandene" type="number" id="entstandene">
 		<p>
-        Tendenzsymbol: <input type="text" id="tendenzsymbol">
-		</p>
-        Motivationsspruch: <input type="text" id="motivationsspruch">
 	</p>
 	<input id="submit" class="button" type="submit" value="Datensatz anzeigen">
 	</fieldset>
 	
 	
 	</div>
-	</form> */
-	
-	?>
+	</form>
 	
 				  
 		 <div class="header">
 		<h1>Strom- und Gasverbräuche</h1>
 			 
-			 <style>     /* Hintergrundbild intern eingebunden, da es extern nicht funtioniert. */
-
-body {	
+			 <style>
+body {
   background-image: url('bild1.jpeg');
 	    min-height: 100vh;
     width: 100%;
@@ -137,7 +131,6 @@ body {
 		
 	
 	<input type="datetime-local" value="">
-	
 	
 	<nav> 
 		
