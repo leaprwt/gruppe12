@@ -43,8 +43,7 @@
 		
 		
 		</tr>";
-   
-   
+     
    
    /* Datensätze aus Ergebnis ermitteln, */
    /* in Array speichern und ausgeben    */
@@ -62,49 +61,68 @@
        echo "</tr>";
    }
 	
-	?>
+	if (isset($_POST["auswahl"]))
+{
+    /* Verbindung aufnehmen und Datenbank auswählen */
+    /* Include der Datei mit den Datenbankzugriffen */
+    include '../dbconnect.inc.php'; 
+   $sql = "SELECT * FROM student WHERE matrikelnummer = "
+      . $_POST["auswahl"];
+   $res = mysqli_query($con, $sql);
+   $dsatz = mysqli_fetch_assoc($res);
+
+   echo "<p>Bitte neue Inhalte eintragen und speichern:</p>";
+   echo "<form action = 'db_einzel_student_c.php' method = 'post'>";
+
+   echo "<p><input name='name' value='"
+      . $dsatz["name"] . "'> Nachname</p>";
+   
+   echo "<p><input name='matrikelnummer' value='"
+      . $_POST["auswahl"] . "'> Matrikelnummer</p>";
+   
+   echo "<p><input type='submit' value='Speichern'>";
+   echo " <input type='reset'></p>";
+   echo "</form>";
+   
+   mysqli_close($con);
+}
+else
+   echo "<p>Keine Auswahl getroffen</p>";
+?>
 	
+	
+/*	
+<h3>Geben Sie Ihre Stromverbräuche an</h3>
+<form name="myForm" action="connect.php" onsubmit="return validateForm()" method="post">
 	<fieldset>
-<legend>Contact Form</legend>
-<form name="frmContact" method="post" action="contact.php">
-<p>
-<label for="Name">Name </label>
-<input type="text" name="txtName" id="txtName">
-</p>
-<p>
-<label for="email">Email</label>
-<input type="text" name="txtEmail" id="txtEmail">
-</p>
-<p>
-<label for="phone">Phone</label>
-<input type="text" name="txtPhone" id="txtPhone">
-</p>
-<p>
-<label for="message">Message</label>
-<textarea name="txtMessage" id="txtMessage"></textarea>
-</p>
-<p>
-<input type="submit" name="Submit" id="Submit" value="Submit">
-</p>
-</form>
-</fieldset>
+	<p>
+	<legend>Los:</legend>
+		Ablesedatum: <input type="text" id="ablesedatum">
+		<p> 
+        kwh: <input type="text" id="kwh">
+		</p>
+        Entstandene Kosten: <input type="text" id="entstandene">
+		<p>
+        Tendenzsymbol: <input type="text" id="tendenzsymbol">
+		</p>
+        Motivationsspruch: <input type="text" id="motivationsspruch">
+	</p>
+	<input id="submit" class="button" type="submit" value="Datensatz anzeigen">
+	</fieldset>
 	
 	
+	</div>
+	</form> */
+	
+	?>
 	
 				  
 		 <div class="header">
 		<h1>Strom- und Gasverbräuche</h1>
 			 
-			 <style>     /* Hintergrundbild verlinkung funktioniert im CSS nicht, darum im php verlinkt */
-
-body {	
+			 <style>
+body {
   background-image: url('bild1.jpeg');
-	    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(bild1.jpeg);
-    background-position:center;
-    background-size:cover;
-    position:relative;
 }
 </style>
 		
@@ -130,4 +148,3 @@ body {
 
 </body>
 </html>
-
