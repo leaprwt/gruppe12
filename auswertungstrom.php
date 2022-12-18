@@ -6,5 +6,18 @@
 </head>
 
 <body>
+	
+	<?php
+	
+$leistung = 6534;
+$zeit = 45;
+
+$ergebnis = $leistung*$zeit;
+	
+	echo "<p>Ihr persönlicher Stromverbrauch liegt bei: ".
+     ($leistung * $zeit) . "</p>";
+
+	?>
+	
 </body>
 </html>
