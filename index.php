@@ -120,9 +120,16 @@ else
 		 <div class="header">
 		<h1>Strom- und Gasverbräuche</h1>
 			 
-			 <style>
-body {
+			 <style>     /* Hintergrundbild intern eingebunden, da es extern nicht funtioniert. */
+
+body {	
   background-image: url('bild1.jpeg');
+	    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(bild1.jpeg);
+    background-position:center;
+    background-size:cover;
+    position:relative;
 }
 </style>
 		
