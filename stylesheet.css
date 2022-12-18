@@ -11,18 +11,29 @@ min-zoom: 1;
 max-zoom: 2;
 }
 
-body {
+.body {
   font-size: small;
   font-family: Verdana, sans-serif;
-}
-
-.header{ 
-    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("Gruppe12bild.jpg");
+	min-height: 100vh;
+    width: 10%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("bild1.jpeg");
     background-position:center;
     background-size:cover;
     position:relative;
+}
+
+/*#bild{ 
+    min-height: 100vh;
+    width: 10%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("bild1.jpeg");
+    background-position:center;
+    background-size:cover;
+    position:relative;
+}*/
+
+#h1 {
+	color: white;
+	text-align: center;
 }
 
 
@@ -33,7 +44,7 @@ body {
 
 
 #navibereich {
-  background-color: #89CFF0;        /* Hintergrundfarbe für die Navigation */ 
+  background-color: #89CFF0;  		/* Hintergrundfarbe für die Navigation */ 
   padding: 4px 4;                   /* Innenabstand: oben/unten 4px, li/re 0 */
   border-top: 3px solid #27377c;    /* Rahmenlinie oben */
   border-bottom: 3px solid #27377c; /* Rahmenlinie unten */
@@ -41,12 +52,14 @@ body {
 }
 
 #navibereich a {
-  color: black;                  /* Schriftfarbe schwarz */ 
+  color: white;                  /* Schriftfarbe schwarz */ 
   text-decoration: none;         /* Unterstreichung entfernen */ 
-  padding: 100px 40px;              /* oben/unten 4px, re/li 8px */
+  padding: 20px 10px;              /* oben/unten 4px, re/li 8px */
+	text-align: center
 }
 
 #navibereich a:hover {
 	cursor: pointer;
   background-color: #34619c;
 }
+
