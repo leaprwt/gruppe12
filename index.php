@@ -21,9 +21,19 @@
    	if($num > 0)	
 ?>
 	
+<?php
+	include 'dbconnect.inc.php';
+	
+	$res = mysqli_query($con, "SELECT * FROM gasverbrauch"); /* SQL-Abfrage ausführen */
+
+	$num = mysqli_num_rows($res); /* Anzahl Datensätze ermitteln und ausgeben */
+   	if($num > 0)	
+?>
+	
 <section class="h1">
-<h1>Strom- und Gasverbräuche</h1>
-			 </section>
+	<h1>Strom- und Gasverbräuche</h1>
+</section>	
+	
 <style>
 body
 {
@@ -48,26 +58,51 @@ body
 			<li id="navi07"><a href="auswertungstrom.php">Auswertung Stromverbrauch</a></li>
 		</ul>
 	</nav>
+	
+	<br></br>
+	<?php
+		 $datum = date("d.m.Y",$timestamp);
+			echo $datum;
+			?> -
+		<?php
+		 		$uhrzeit = date("H:i",$timestamp);
+				echo $uhrzeit;
+			?>
 
 <section class="h3">
-<h3>Geben Sie Ihre Stromverbräuche an</h3>
-	</section>
+	<h3>Geben Sie Ihre Stromverbräuche an</h3>
+</section>
 	
-	<section class="Eingabe"> 
 <form name="myForm" action="/connect.php" method="post">
 	<fieldset>
 		<p>
-		<legend>Los:</legend>
+		<legend></legend>
 		Ablesedatum: <input name="ablesedatum" type="datetime-local" id="ablesedatum" required>
 		<p> 
-		kwh: <input name="kwh" type="number" id="kwh" required>
+		Verbrauch: <input name="verbrauche" type="number" id="verbrauche" required>
 		</p>
 		Entstandene Kosten: <input name="entstandene" type="number" id="entstandene" required>
 		<p></p>
-		<input id="submit" class="button" type="submit" value="Datensatz anzeigen">
+		<input id="submit" class="button" type="submit" value="Speichern">
 	</fieldset>
 </form>
-	</section>	
 		
+<section class="h4">
+	<h3>Geben Sie Ihre Gasverbräuche an</h4>
+</section>
+<form name="myForm" action="gasconnect.php" method="post">
+	<fieldset>
+		<p>
+		<legend></legend>
+		Ablesedatum: <input name="ablesedatum" type="datetime-local" id="ablesedatum" required>
+		<p> 
+		Verbrauch: <input name="verbrauch" type="number" id="verbrauch" required>
+		</p>
+		Entstandene Kosten: <input name="entstanden" type="number" id="entstanden" required>
+		<p></p>
+		<input id="submit" class="button" type="submit" value="Speichern">
+	</fieldset>
+</form>
+	
 </body>
 </html>
