@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	
@@ -51,6 +52,8 @@ body
 <section class="h3">
 <h3>Geben Sie Ihre Stromverbräuche an</h3>
 	</section>
+	
+	<section class="Eingabe"> 
 <form name="myForm" action="/connect.php" method="post">
 	<fieldset>
 		<p>
@@ -64,6 +67,7 @@ body
 		<input id="submit" class="button" type="submit" value="Datensatz anzeigen">
 	</fieldset>
 </form>
-			 
+	</section>	
+		
 </body>
 </html>
