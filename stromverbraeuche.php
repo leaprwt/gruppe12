@@ -4,13 +4,15 @@
 <meta charset="utf-8">
 <title>Stromverbräuche</title>
 	
+	<script language="javascript" type="text/javascript" src="javascript.js"></script>
+	
+	<?php
+	include('header.php'); 
+	?>
+	
 </head>
 	
 <body>
-	
-	<h1>Ihren Stromverbrauch berechnen</h1>
-	
-	
 	<?php
 		 $datum = date("d.m.Y",$timestamp);
 			echo $datum;
@@ -20,13 +22,17 @@
 				echo $uhrzeit;
 			?>
 	
+	<h1>Ihren Stromverbrauch berechnen</h1>
+	
+	
+	
 	<br></br>
 	
 
 	
 	
 	<section id="form">
-            <form action="auswertungstrom.php" id="formular">
+            <form action="berechneStromKosten.php" id="formular">
                 <table>
                     <tr>
                         <td>Leistung</td>
@@ -56,7 +62,7 @@ $ergebnis = $leistung*$zeit;
 
 	?>
 	
-	<form action="auswertungstrom.php" method="post">
+	<form action="berechneStromKosten.php" method="post">
 		
    <label>Leistung
       <input type="number" name="username" value="" placeholder="Watt" />
@@ -68,8 +74,66 @@ $ergebnis = $leistung*$zeit;
  
    <label><input type="submit" value="Jetzt berechnen" /><label>
 </form>
+	   
+	   
+	   <br></br>
+	   <form method="post" action="verarbeitung.php" onsubmit="return checkform(this)" >
 
-		
+<input type="radio" name="anrede" value="Frau">
+<input type="radio" name="anrede" value="Herr">
+
+<input type="text" name="name" size="">
+
+<input type="checkbox" name="thema[]" value="HTML">
+<input type="checkbox" name="thema[]" value="PHP">
+							
+</form>
+
+		<?php  include 'homelink.inc.php';?>
+<p>Treffen Sie Ihre Auswahl:</p>
+<form action = "stromverbraeuche_b.php" method = "post">
+<?php
+    /* Verbindung aufnehmen und Datenbank auswählen */
+    /* Include der Datei mit den Datenbankzugriffen */
+    include 'dbconnect.inc.php';  
+    $res = mysqli_query($con, "SELECT * FROM kategorietabelle");
+
+   // Tabellenbeginn
+   echo "<table border='1'>";
+
+   // Überschrift
+   echo "<tr> <td>Auswahl</td> <td>Kategorie</td>";
+   
+   while ($dsatz = mysqli_fetch_assoc($res))
+   {
+      echo "<tr>";
+      echo "<td><input type='radio' name='auswahl'";
+      echo " value='" . $dsatz["kühlschrank"] . "'></td>";
+      echo "<td>" . $dsatz["kühlschrank"] . "</td>";
+      echo "</tr>";
+      echo "<td><input type='radio' name='auswahl'";
+      echo " value='" . $dsatz["fernseher"] . "'></td>";
+      echo "<td>" . $dsatz["fernseher"] . "</td>";
+      echo "</tr>";
+	  echo "<td><input type='radio' name='auswahl'";
+      echo " value='" . $dsatz["herd"] . "'></td>";
+      echo "<td>" . $dsatz["herd"] . "</td>";
+      echo "</tr>";
+	  echo "<td><input type='radio' name='auswahl'";
+      echo " value='" . $dsatz["toaster"] . "'></td>";
+      echo "<td>" . $dsatz["toaster"] . "</td>";
+      echo "</tr>";
+   }
+
+   // Tabellenende
+   echo "</table>";
+   
+   mysqli_close($con);
+?>
+<p><input type="submit" value="Datensatz anzeigen"></p>
+</form>
+</body></html>
+
 	
 	
 </body>
