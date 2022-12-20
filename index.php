@@ -3,7 +3,7 @@
 <head>
 	
 <script language="javascript" type="text/javascript" src="javascript.js"></script>
-<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<link href="./stylesheet.css" rel="stylesheet" type="text/css">
 
 <meta charset="utf-8">
 
@@ -30,10 +30,22 @@
    	if($num > 0)	
 ?>
 	
+	<section class="Daten">
+	<?php
+		 $datum = date("d.m.Y",$timestamp);
+			echo $datum;
+			?> -
+		<?php
+		 		$uhrzeit = date("H:i",$timestamp);
+				echo $uhrzeit;
+			?>
+	</section>
+	
 <section class="h1">
 	<h1>Strom- und Gasverbräuche</h1>
 </section>	
-	
+
+<section class="header"> <!-- Hintergrundbild intern eingebaut, da es extern nicht funktioniert -->
 <style>
 body
 {
@@ -46,6 +58,7 @@ body
     position:relative;
 }
 </style>
+		</section>
 	
 	<nav> 
 		<ul id="navibereich">
@@ -58,26 +71,17 @@ body
 			<li id="navi07"><a href="auswertungstrom.php">Auswertung Stromverbrauch</a></li>
 		</ul>
 	</nav>
-	
-	<br></br>
-	<?php
-		 $datum = date("d.m.Y",$timestamp);
-			echo $datum;
-			?> -
-		<?php
-		 		$uhrzeit = date("H:i",$timestamp);
-				echo $uhrzeit;
-			?>
 
 <section class="h3">
-	<h3>Geben Sie Ihre Stromverbräuche an</h3>
+	<h3> Geben Sie Ihre Stromverbräuche an</h3>
 </section>
 	
+<section class="Stromverbrauch">
 <form name="myForm" action="/connect.php" method="post">
 	<fieldset>
 		<p>
 		<legend></legend>
-		Ablesedatum: <input name="ablesedatum" type="datetime-local" id="ablesedatum" required>
+		Ablesedatum:<input name="ablesedatum2" type="datetime-local" id="ablesedatum2" required>
 		<p> 
 		Verbrauch: <input name="verbrauche" type="number" id="verbrauche" required>
 		</p>
@@ -86,10 +90,13 @@ body
 		<input id="submit" class="button" type="submit" value="Speichern">
 	</fieldset>
 </form>
+</section>
 		
 <section class="h4">
 	<h3>Geben Sie Ihre Gasverbräuche an</h4>
 </section>
+	
+	<section class="Gasverbrauch">
 <form name="myForm" action="gasconnect.php" method="post">
 	<fieldset>
 		<p>
@@ -103,6 +110,8 @@ body
 		<input id="submit" class="button" type="submit" value="Speichern">
 	</fieldset>
 </form>
+	</section>
 	
 </body>
 </html>
+
