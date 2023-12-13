@@ -1,0 +1,134 @@
+main {
+  height: 90vh;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+.vertical-separator {
+  width: 2px;
+  background-color: #a2a2a2;
+  height: 70%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+/* Left Side */
+.book-description {
+  padding: 0 4rem;
+  max-width: 90%;
+}
+
+.book-description h5 {
+  font-weight: 500;
+  margin-top: 6rem;
+}
+
+.book-description p {
+  margin-top: 2rem;
+}
+
+.download-button {
+  margin-top: 4rem;
+
+  border: none;
+  background-color: #70c6fc;
+
+  width: 15rem;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  cursor: pointer;
+
+  border-radius: 0.5rem;
+}
+
+.download-button a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Right Side */
+
+.book-cover {
+  height: 25rem;
+}
+
+.book-details-desktop {
+  padding: 0 4rem;
+}
+
+.book-details-desktop h6 {
+  font-weight: 500;
+}
+
+.details {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/*Hide Mobile Details*/
+.book-details-mobile {
+  display: none;
+}
+
+/*-------------------------*/
+
+/* Mobile Breakpoint */
+@media only screen and (max-width: 1100px) {
+  .vertical-separator {
+    display: none;
+  }
+
+  main {
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .book-description {
+    padding: 0 2rem;
+    margin-top: 2rem;
+  }
+
+  .book-description h5 {
+    margin-top: 2rem;
+    font-weight: 500;
+  }
+
+  .download-button {
+    margin-top: 2rem;
+  }
+
+  .book-details-desktop {
+    display: none;
+  }
+
+  /*Show Mobile specific details*/
+
+  .book-cover {
+    height: 10rem;
+  }
+
+  .book-details-mobile {
+    margin-top: 2rem;
+
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 2rem;
+  }
+  .book-details-mobile h6 {
+    font-weight: 300;
+    font-size: 0.833rem;
+    max-height: fit-content;
+  }
+}
