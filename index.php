@@ -9,8 +9,13 @@ if ($is_api_request) {
 } else {
     // Frontend Routes
     $frontend_routes = array(
-        '/studiplaner' => 'app/studyplaner/overview.html',
-        '/kursdetails' => 'app/studyplaner/courseDetails.html'
+        '/studiplaner' => 'app/studyplaner/overview.php',
+        '/kursdetails' => 'app/studyplaner/courseDetails.php',
+        '/bibliothek' => 'app/library/overview.php',
+        '/buchdetails' =>  'app/library/bookDetails.php',
+        '/mensaplan' => 'app/mealPlan/overview.php',
+        '/gerichtdetails' => 'app/mealPlan/mealDetails.php',
+        '/datenerfassen' => 'app/addData.html'
     );
 
     foreach ($frontend_routes as $route => $file) {
