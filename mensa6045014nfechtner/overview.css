@@ -1,0 +1,95 @@
+body {
+  background-color: #b272d7;
+}
+
+.main {
+  display: grid;
+
+  min-height: 90vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+.headline {
+  margin-top: 2rem;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+}
+
+.checkout-button {
+  width: 17rem;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: #70c6fc;
+
+  cursor: pointer;
+}
+
+.checkout-button a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+/* Meals Container */
+.weekly-meals {
+  margin-top: 2rem;
+
+  display: grid;
+  grid-auto-flow: column;
+
+  width: 100%;
+  overflow-x: auto;
+
+  padding: 0 4rem;
+
+  gap: 5rem;
+}
+.weekly-meals a {
+  color: #36617b;
+}
+
+/* Days */
+.daily-meals {
+  grid-column: span 6;
+}
+
+/* Adjust Font weights */
+.daily-meals h4 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.main-dishes h6,
+.side-dishes h6,
+.desserts h6 {
+  font-weight: 500;
+}
+
+.dish {
+  margin-bottom: 4rem;
+}
+
+/* Meal */
+.meal {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-auto-flow: column;
+}
+.meal p {
+  margin-left: 4rem;
+}
+
+/*-------------------------*/
