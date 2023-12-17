@@ -93,3 +93,42 @@ body {
 }
 
 /*-------------------------*/
+
+/* Mobile Breakpoint */
+@media only screen and (max-width: 1000px) {
+  .main {
+    border-radius: 15px 15px 0 0;
+    justify-content: center;
+  }
+
+  .weekly-meals {
+    grid-auto-flow: row;
+  }
+
+  .headline {
+    margin-top: 2rem;
+
+    display: block;
+    padding: 0 2rem;
+  }
+  /* Position button fixed on bottom */
+  .checkout-button {
+    position: fixed;
+
+    width: 80%;
+
+    bottom: 1rem;
+    left: 10%;
+
+    border-radius: 90px;
+  }
+
+  .weekly-meals {
+    margin-top: 2rem;
+    padding: 0 2rem;
+    width: fit-content;
+  }
+  .dish {
+    margin-bottom: 2rem;
+  }
+}
