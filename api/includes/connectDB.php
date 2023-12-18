@@ -1,5 +1,5 @@
 <?php
-    //establishs and returns database connection
+    //establishes and returns database connection
     function connectDB($host, $user, $password, $dbname) {
         $conn = new mysqli($host, $user, $password, $dbname);
 
