@@ -1,0 +1,158 @@
+main {
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+.vertical-separator {
+  width: 2px;
+  background-color: #a2a2a2;
+  height: 70%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+/* Left Side */
+.meal-description {
+  padding: 0 4rem;
+  max-width: 90%;
+  display: grid;
+}
+
+.meal-description h5 {
+  font-weight: 500;
+  margin-top: 6rem;
+}
+
+.meal-description p {
+  margin-top: 2rem;
+}
+
+.meal-cover {
+  max-width: auto;
+  height: 40%;
+  margin-top: 1rem;
+}
+
+.checkout-button {
+  margin-top: 4rem;
+
+  border: none;
+  background-color: #70c6fc;
+
+  width: 15rem;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  cursor: pointer;
+
+  border-radius: 0.5rem;
+}
+
+.checkout-button a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Right Side */
+
+.meal-cover {
+  height: 25rem;
+}
+
+.meal-details-desktop {
+  padding: 0 4rem;
+}
+
+.meal-details-desktop h6 {
+  font-weight: 500;
+}
+
+.details {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/*Hide Mobile Details*/
+.meal-details-mobile {
+  display: none;
+}
+
+/*-------------------------*/
+
+/* Mobile Breakpoint */
+@media only screen and (max-width: 1100px) {
+  .vertical-separator {
+    display: none;
+  }
+
+  main {
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 2.488rem;
+    margin-bottom: 4rem;
+  }
+
+  .meal-description {
+    padding: 0 2rem;
+    margin-top: 2rem;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .meal-description h5 {
+    margin-top: 2rem;
+    font-weight: 500;
+  }
+
+  .checkout-button {
+    margin-top: 2rem;
+  }
+
+  .meal-details-desktop {
+    display: none;
+  }
+
+  /*Show Mobile specific details*/
+  .meal-cover {
+    height: 10rem;
+  }
+
+  .meal-details-mobile {
+    margin-top: 2rem;
+    display: block;
+  }
+  .meal-details-mobile h6 {
+    font-weight: 300;
+    font-size: 0.833rem;
+    max-height: fit-content;
+  }
+
+  .details-container-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .checkout-button {
+    position: absolute;
+    width: 80%;
+    bottom: 1rem;
+    right: 10%;
+
+    border-radius: 90px;
+  }
+}
