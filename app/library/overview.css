@@ -1,0 +1,177 @@
+body {
+  background-color: #b272d7;
+}
+
+/* Main */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: white;
+
+  width: 100vw;
+  min-height: 90vh;
+}
+
+/* Title */
+.title {
+  margin-top: 8rem;
+}
+
+/* Searchbar */
+.search {
+  margin-top: 4rem;
+
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 2rem;
+  align-items: center;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  border-radius: 90px;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
+
+  height: 4rem;
+  width: 40rem;
+}
+
+.searchbar-icon {
+  font-size: 2rem;
+}
+
+.vertical-separator {
+  height: 2.5rem;
+  width: 1px;
+  background-color: #959595;
+
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+
+  flex-grow: 1;
+}
+
+/* Filter Icon */
+.filter-icon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+/* Results */
+.results {
+  margin-top: 8rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 4rem;
+  justify-items: center;
+
+  width: 80vw;
+}
+
+/* Card */
+.card {
+  width: 15rem;
+  height: 22rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
+  border-radius: 15px;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+.cover-image {
+  margin-top: 1.5rem;
+  height: 10rem;
+}
+
+.details-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 10rem;
+  height: 2.5rem;
+
+  border: none;
+  background-color: #ae9ae3;
+
+  border-radius: 5px;
+}
+
+.details-button a {
+  text-decoration: none;
+  color: black;
+}
+
+/*-------------------------*/
+
+/* Mobile Breakpoint */
+
+@media screen and (max-width: 1200px) {
+  .results {
+    margin-top: 4rem;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .main {
+    justify-items: start;
+
+    padding: 0 1rem;
+
+    border-radius: 15px 15px 0 0;
+  }
+
+  .title {
+    margin-top: 2rem;
+  }
+
+  .search {
+    margin-top: 1.5rem;
+    width: 100%;
+    gap: 1rem;
+    justify-content: start;
+  }
+
+  .searchbar {
+    width: 70vw;
+    height: 3rem;
+  }
+
+  .searchbar-icon {
+    font-size: 1.5rem;
+  }
+
+  .vertical-separator {
+    height: 1.5rem;
+  }
+
+  .filter-icon {
+    font-size: 2rem;
+  }
+
+  .results {
+    margin-top: 4rem;
+    grid-template-columns: 1fr;
+    justify-self: center;
+  }
+}
