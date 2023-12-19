@@ -30,10 +30,7 @@ async function fetchData() {
   //set image cover
   document
     .querySelectorAll('.book-cover')
-    .forEach(
-      (item) =>
-        (item.src = `/app/assets/books/${bookDetails[0].cover_image_link}`)
-    );
+    .forEach((item) => (item.src = `${bookDetails[0].cover_image_link}`));
 
   //set author
   document
