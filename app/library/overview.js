@@ -31,7 +31,7 @@ async function fetchData() {
 
     card.innerHTML = `
         <div class="card">
-            <img src="/app/assets/books/${book.cover_image_link}" class="cover-image" />
+            <img src="${book.cover_image_link}" class="cover-image" />
             <h6 class="book-title">${book.book_title}</h6>
             <button class="details-button">
                 <a href="/buchdetails?bookID=${book.book_id}">Zum Buch</a>
