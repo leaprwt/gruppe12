@@ -15,6 +15,7 @@ if ($is_api_request) {
         '/buchdetails' =>  'app/library/bookDetails.php',
         '/mensaplan' => 'app/mealPlan/overview.php',
         '/gerichtdetails' => 'app/mealPlan/mealDetails.php',
+        '/bestellen' => 'app/mealPlan/checkout.html',
         '/datenerfassen' => 'app/addData.html'
     );
 
