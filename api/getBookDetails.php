@@ -4,9 +4,9 @@
     require_once "api/includes/connectDB.php";
 
     if($_SERVER["REQUEST_METHOD"] === "GET") {
-        $dbname = "library";
+        $dbname = LIBRARY_DATABASE;
         //Connects to database
-        $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+        $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
     
 
         //Get course ID from request
