@@ -1,8 +1,7 @@
 <?php
-    //get all data
-    $dbname = "library";
+    $dbname = LIBRARY_DATABASE;
     //Connects to database
-    $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+    $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
 
     //Selects book names and cover-image path
     $sql = "SELECT books.*, authors.name as author_name FROM books
