@@ -24,8 +24,8 @@
         move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
         
         //insert values into database
-        $dbname = "library";
-        $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+        $dbname = LIBRARY_DATABASE;
+        $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
 
 
         $sql = "INSERT INTO `books` (book_id, isbn, cover_image_link, description, title, date_published,
