@@ -1,29 +1,51 @@
-main {
-  padding: 2rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
+/* Using "Poppins" Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+p,
+h6,
+h5,
+h5,
+h4,
+h3,
+h2,
+h1,
+input,
+button,
+a,
+::placeholder {
+  font-family: 'Poppins', sans-serif;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
+/* Setup global Type Scale based on 16px Minor Third */
+.small {
+  font-size: 0.833rem;
+}
+p {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.44rem;
+}
+h4 {
+  font-size: 1.728rem;
+}
+h3 {
+  font-size: 2.074rem;
+}
+h2 {
+  font-size: 2.488rem;
+}
+h1 {
+  font-size: 2.986rem;
 }
 
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #b272d7;
-}
-
-@media screen and (max-width: 767px) {
-  main {
-    gap: 2rem;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
