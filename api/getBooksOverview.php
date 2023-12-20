@@ -5,9 +5,9 @@
 
 
     if($_SERVER["REQUEST_METHOD"] === "GET") {
-        $dbname = "library";
+        $dbname = LIBRARY_DATABASE;
         //Connects to database
-        $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+        $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
     
         //Selects book names and cover-image path
         $sql = "SELECT book_id, title, cover_image_link FROM books";
