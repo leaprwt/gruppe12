@@ -16,8 +16,8 @@
         <select name="category" required>
         <?php
             //get all possible values from database
-            $dbname = "library";
-            $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+            $dbname = LIBRARY_DATABASE;
+            $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
 
             $sql = "SELECT * FROM bookcategories";
             $professors = $conn->query($sql);
@@ -32,8 +32,8 @@
         <select name="language" required>
         <?php
             //get all possible values from database
-            $dbname = "library";
-            $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+            $dbname = LIBRARY_DATABASE;
+            $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
 
             $sql = "SELECT * FROM languages";
             $professors = $conn->query($sql);
@@ -48,8 +48,8 @@
         <select name="book-type" required>
         <?php
             //get all possible values from database
-            $dbname = "library";
-            $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+            $dbname = LIBRARY_DATABASE;
+            $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
 
             $sql = "SELECT * FROM booktypes";
             $professors = $conn->query($sql);
@@ -64,8 +64,8 @@
         <select name="author" required>
         <?php
             //get all possible values from database
-            $dbname = "library";
-            $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+            $dbname = LIBRARY_DATABASE;
+            $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
 
             $sql = "SELECT * FROM authors";
             $professors = $conn->query($sql);
