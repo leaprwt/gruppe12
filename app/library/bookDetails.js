@@ -1,5 +1,5 @@
 //fetch all courses from api
-const BASE_URL = 'http://localhost:8888';
+const BASE_URL = 'http://m12242-30.kurs.jade-hs.de';
 //get bookID based on client URL
 const bookID = new URLSearchParams(window.location.search).get('bookID');
 async function fetchData() {
