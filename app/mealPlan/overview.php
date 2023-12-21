@@ -23,6 +23,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </nav>
       <!--Toggle Icon-->
@@ -36,6 +37,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </div>
     </header>
@@ -45,7 +47,7 @@
         <h1>Mensaplan</h1>
         <button class="checkout-button">
           <span class="material-icons">shopping_bag</span>
-          <a href="#">Bestellen : 0€</a>
+          <a href="/bestellen">Bestellen : 0€</a>
         </button>
       </div>
       <div class="weekly-meals"></div>
