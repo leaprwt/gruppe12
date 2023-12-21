@@ -22,6 +22,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </nav>
       <!--Toggle Icon-->
@@ -35,6 +36,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </div>
     </header>
@@ -46,9 +48,9 @@
         <h2>Anmeldung</h2>
         <div class="student-number-input">
           <span class="material-icons">confirmation_number</span>
-          <input type="text" placeholder="matrikelnummer" />
+          <input type="number" placeholder="matrikelnummer" />
         </div>
-        <button class="checkout-button">
+        <button class="checkout-button" onclick="checkoutOrder()">
           <span class="material-icons">shopping_bag</span>
           <a href="#">Jetzt reservieren</a>
         </button>
