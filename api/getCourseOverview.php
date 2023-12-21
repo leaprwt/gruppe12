@@ -5,9 +5,9 @@
 
 
     if($_SERVER["REQUEST_METHOD"] === "GET") {
-        $dbname = "studyplaner";
+        $dbname = STUDY_PLANER_DATABASE;
         //Connects to database
-        $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+        $conn = connectDB(STUDY_PLANER_HOST, STUDY_PLANER_USER, STUDY_PLANER_PASSWORD, $dbname);
     
         //Selects course name and description from all courses
         $sql = "SELECT course_id, course_name, description FROM courses";
