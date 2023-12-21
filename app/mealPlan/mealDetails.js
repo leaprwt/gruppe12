@@ -1,5 +1,5 @@
 //fetch all courses from api
-const BASE_URL = 'http://localhost:8888';
+const BASE_URL = 'http://m12242-30.kurs.jade-hs.de';
 //get courseID based on client URL
 const mealID = new URLSearchParams(window.location.search).get('mealID');
 
@@ -26,6 +26,7 @@ async function fetchData() {
   console.log(meal);
 
   //update UI based on data
+  document.querySelector('.meal-cover').src = meal[0].path_to_image;
   document.querySelector('.title').innerHTML = meal[0].meal_name;
   document.querySelector('.nutrition-type').querySelector('h6').innerText =
     meal[0].nutrition_name;
