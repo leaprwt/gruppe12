@@ -1,5 +1,5 @@
 //fetch all meals from api
-const BASE_URL = 'http://localhost:8888';
+const BASE_URL = 'http://m12242-30.kurs.jade-hs.de';
 async function fetchData() {
   try {
     const response = await fetch(`${BASE_URL}/api/getMealsOverview`);
