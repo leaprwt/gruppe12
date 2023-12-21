@@ -4,9 +4,9 @@
     require_once "api/includes/connectDB.php";
 
     if($_SERVER["REQUEST_METHOD"] === "GET") {
-        $dbname = "studyplaner";
+        $dbname = STUDY_PLANER_DATABASE;
         //Connects to database
-        $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+        $conn = connectDB(STUDY_PLANER_HOST, STUDY_PLANER_USER,STUDY_PLANER_PASSWORD, $dbname);
     
 
         //Get course ID from request
