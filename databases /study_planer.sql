@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Dec 12, 2023 at 11:29 AM
+-- Generation Time: Dec 20, 2023 at 12:26 PM
 -- Server version: 5.7.39
 -- PHP Version: 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `study planer`
+-- Database: `studyplaner`
 --
 
 -- --------------------------------------------------------
@@ -50,7 +50,8 @@ INSERT INTO `courses` (`course_id`, `course_name`, `professor_id`, `description`
 (5, 'Medienprojekt 1', 10, 'Medienwirtschaftliche, journalistische, kommunikationswissenschaftliche, gestalterische und/oder technische Kenntnisse in fächerübergreifenden Projekten anwenden; Medienkonzepte im Team entwickeln, planen und nachhalten; Umsetzungen auf wissenschaftlicher Grundlage analysieren und reflektieren;', 5, NULL, '2023-12-14 12:15:00', '2023-12-14 14:15:00'),
 (6, 'Mathematik', 6, 'Behandelt werden Grundlagen der Aussagenlogik, der Mengenlehre, der Relationen und der Kombinatorik sowie Gleichungen/Ungleichungen, Systeme von Gleichungen/Ungleichungen, Vektorrechnung, Eigenschaften und Konstruktion von Funktionen. In die Differential- und Integralrechnung und ihre Bedeutung wird ein Einblick gegeben.', 4, 2, '2023-12-12 14:15:00', '2023-12-11 12:15:00'),
 (7, 'Medien & Kommunikation 2', 9, 'Kenntnisse und Anwendung grundlegender Methoden in der empirischen Kommunikations- und Medienforschung, u.a. qualitative und quantitative Befragung, Inhaltsanalyse, ggfs. Beobachtung und Experiment.', 5, 1, '2023-12-13 10:15:00', '2023-12-13 12:15:00'),
-(8, 'Internettechnologie 2', 8, 'Es werden client- und serverseitige Technologien vorgestellt. Kenntnisse in ausgesuchten Technologien und Sprachen (z.B. php, SQL) werden vertieft vermittelt. Datenbanken und deren Einbindung in Webauftritte werden theoretisch behandelt und praktisch eingeübt. Die Veranstaltung wird in einen theoretischen und einen Übungsblock unterteilt, sodass das Erlernte auch praktisch angewendet und eingeübt werden kann.', 5, 1, '2023-12-14 08:15:00', '2023-12-14 10:15:00');
+(8, 'Internettechnologie 2', 8, 'Es werden client- und serverseitige Technologien vorgestellt. Kenntnisse in ausgesuchten Technologien und Sprachen (z.B. php, SQL) werden vertieft vermittelt. Datenbanken und deren Einbindung in Webauftritte werden theoretisch behandelt und praktisch eingeübt. Die Veranstaltung wird in einen theoretischen und einen Übungsblock unterteilt, sodass das Erlernte auch praktisch angewendet und eingeübt werden kann.', 5, 1, '2023-12-14 08:15:00', '2023-12-14 10:15:00'),
+(12, 'Testname', 4, 'Testbeschreibung', 12, 2, '2023-12-19 17:08:00', '2023-12-20 17:08:00');
 
 -- --------------------------------------------------------
 
@@ -97,20 +98,20 @@ INSERT INTO `faculties` (`faculty_id`, `faculty_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `linking courses-students`
+-- Table structure for table `linking-courses-students`
 --
 
-CREATE TABLE `linking courses-students` (
-  `linke_course_student_id` int(32) NOT NULL,
+CREATE TABLE `linking-courses-students` (
+  `linking_course_student_id` int(32) NOT NULL,
   `course_id` int(32) NOT NULL,
   `student_id` int(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `linking courses-students`
+-- Dumping data for table `linking-courses-students`
 --
 
-INSERT INTO `linking courses-students` (`linke_course_student_id`, `course_id`, `student_id`) VALUES
+INSERT INTO `linking-courses-students` (`linking_course_student_id`, `course_id`, `student_id`) VALUES
 (1, 6, 4),
 (2, 8, 4),
 (3, 2, 4),
@@ -122,7 +123,8 @@ INSERT INTO `linking courses-students` (`linke_course_student_id`, `course_id`, 
 (9, 4, 6),
 (10, 6, 6),
 (11, 8, 6),
-(12, 7, 6);
+(12, 7, 6),
+(19, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -200,10 +202,10 @@ ALTER TABLE `faculties`
   ADD PRIMARY KEY (`faculty_id`);
 
 --
--- Indexes for table `linking courses-students`
+-- Indexes for table `linking-courses-students`
 --
-ALTER TABLE `linking courses-students`
-  ADD PRIMARY KEY (`linke_course_student_id`),
+ALTER TABLE `linking-courses-students`
+  ADD PRIMARY KEY (`linking_course_student_id`),
   ADD KEY `linking-student` (`student_id`),
   ADD KEY `linking-course` (`course_id`);
 
@@ -231,7 +233,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `course_id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `course_id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `examtypes`
@@ -246,10 +248,10 @@ ALTER TABLE `faculties`
   MODIFY `faculty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `linking courses-students`
+-- AUTO_INCREMENT for table `linking-courses-students`
 --
-ALTER TABLE `linking courses-students`
-  MODIFY `linke_course_student_id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `linking-courses-students`
+  MODIFY `linking_course_student_id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `professors`
@@ -275,9 +277,9 @@ ALTER TABLE `courses`
   ADD CONSTRAINT `course-professor` FOREIGN KEY (`professor_id`) REFERENCES `professors` (`professor_id`);
 
 --
--- Constraints for table `linking courses-students`
+-- Constraints for table `linking-courses-students`
 --
-ALTER TABLE `linking courses-students`
+ALTER TABLE `linking-courses-students`
   ADD CONSTRAINT `linking-course` FOREIGN KEY (`course_id`) REFERENCES `courses` (`course_id`),
   ADD CONSTRAINT `linking-student` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`);
 
