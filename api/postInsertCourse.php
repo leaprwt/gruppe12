@@ -1,29 +1,37 @@
 <?php
-    //imports utils
+    //import utils
     require_once "api/includes/config.php";
     require_once "api/includes/connectDB.php";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $course_name = $_POST["course_name"];
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])) {
+        //get values from request
+        $book_name = $_POST["book_name"];
+        $isbn = $_POST["isbn"];
         $description = $_POST["description"];
-        $professor = $_POST["professor"];
-        $ects = $_POST["ects"];
-        $type_of_exam = $_POST["type_of_exam"];
-        $lecture_time_one = $_POST["lecture_time_one"];
-        $lecture_time_two = $_POST["lecture_time_two"];
+        $date = $_POST["date"];
+        $category = $_POST["category"];
+        $language = $_POST["language"];
+        $bookType = $_POST["book-type"];
+        $author = $_POST["author"];
 
-        //convert into database ready date
-        $lecture_time_one = date("Y-m-d H:i:s", strtotime($lecture_time_one));
-        $lecture_time_two = date("Y-m-d H:i:s", strtotime($lecture_time_two));
+        //specify image path
+        $target_dir = "app/assets/books/";
+        //generate unique file name
+        $uniqueFilename = uniqid('image_', true) . '.' . strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
+        $target_file = $target_dir . $uniqueFilename;
 
-        //connect to database and try to insert data
-        $dbname = "studyplaner";
-        $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+        //uploading file
+        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+        
+        //insert values into database
+        $dbname = LIBRARY_DATABASE;
+        $conn = connectDB(LIBRARY_HOST, LIBRARY_USER, LIBRARY_PASSWORD, $dbname);
 
 
-        $sql = "INSERT INTO `courses` (course_id, course_name, professor_id, description, ects, type_of_exam_id, lecture_time_one, lecture_time_two) 
-                VALUES (NULL, '$course_name', '$professor', '$description', '$ects', 
-                '$type_of_exam', '$lecture_time_one', '$lecture_time_two')";
+        $sql = "INSERT INTO `books` (book_id, isbn, cover_image_link, description, title, date_published,
+                                    category_id, language_id, book_type_id, author_id) 
+                VALUES (NULL, '$isbn', '$target_file', '$description', '$book_name', '$date',
+                        '$category', '$language', '$bookType', '$author')";
 
         $result = $conn->query($sql);
 
@@ -35,8 +43,5 @@
 
         echo $response;
     }
-
-
-    $conn->close();
 
 ?>
