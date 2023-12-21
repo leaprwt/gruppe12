@@ -22,6 +22,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </nav>
       <!--Toggle Icon-->
@@ -35,6 +36,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </div>
     </header>
@@ -42,7 +44,7 @@
     <main class="main">
       <div class="meal-description">
         <h1 class="title">Curry mit Tofu</h1>
-        <img src="/app/assets/meals/currry-with-tofu.jpeg" class="meal-cover" />
+        <img src="" class="meal-cover" />
 
         <!--Mobile Details only-->
         <div class="meal-details-mobile">
@@ -70,7 +72,7 @@
           </div>
           <button class="checkout-button">
             <span class="arrow-right-icon material-icons">shopping_bag</span>
-            <a> Bezahlen: 23,5€ </a>
+            <a href="/bestellen"> Bezahlen: 23,5€ </a>
           </button>
         </div>
 
@@ -106,7 +108,7 @@
         </div>
         <button class="checkout-button">
           <span class="arrow-right-icon material-icons">shopping_bag</span>
-          <a> Bezahlen </a>
+          <a href="/bestellen"> Bezahlen </a>
         </button>
       </div>
     </main>
