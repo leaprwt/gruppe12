@@ -5,9 +5,9 @@
 
 
     if($_SERVER["REQUEST_METHOD"] === "GET") {
-        $dbname = "mealplans";
+        $dbname = MEAL_PLAN_DATABASE;
         //Connects to database
-        $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+        $conn = connectDB(MEAL_PLAN_HOST, MEAL_PLAN_USER, MEAL_PLAN_PASSWORD, $dbname);
     
         //Selects id, name, price and day from all meals
         $sql = "SELECT meals.name as meal_name, meals.meal_id, meals.price, 
