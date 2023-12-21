@@ -89,7 +89,7 @@
             event.preventDefault(); 
 
             //post data to api
-            fetch('http://localhost:8888/api/postInsertBook', {
+            fetch('http://m12242-30.kurs.jade-hs.de/api/postInsertBook', {
                 method: 'POST',
                 body: new FormData(document.getElementById('book_form')),
             })
