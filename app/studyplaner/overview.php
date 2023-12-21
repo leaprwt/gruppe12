@@ -23,6 +23,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </nav>
       <!--Toggle Icon-->
@@ -36,6 +37,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </div>
     </header>
@@ -57,7 +59,7 @@
       <div class="results"></div>
     </main>
 
-    <script src="/app/navbar/navbar.js"></script>
-    <script src="/app/studyPlaner/overview.js"></script>
+    <script src="app/navbar/navbar.js"></script>
+    <script src="app/studyPlaner/overview.js"></script>
   </body>
 </html>
