@@ -191,7 +191,7 @@ function buildEnrollUiMobile() {
 
 //try to enroll in course
 async function enrollCourse() {
-  const BASE_URL = 'http://localhost:8888';
+  const BASE_URL = 'http://m12242-30.kurs.jade-hs.de';
   const studentNumber = document.querySelector(
     '.student-number-input-field'
   ).value;
