@@ -4,22 +4,23 @@
     require_once "api/includes/connectDB.php";
 
     if($_SERVER["REQUEST_METHOD"] === "GET") {
-        $dbname = "mealplans";
+        $dbname = MEAL_PLAN_DATABASE;
         //Connects to database
-        $conn = connectDB(HOST, USER, PASSWORD, $dbname);
+        $conn = connectDB(MEAL_PLAN_HOST, MEAL_PLAN_USER, MEAL_PLAN_PASSWORD, $dbname);
 
         //Get mealID from request
         $mealID = $_GET['mealID'];
 
         //gets all meal details
         $sql = "SELECT meals.name as meal_name, 
-                       meals.calories, meals.protein, meals.fat, meals.carbonhydrate,
-                       meals.path_to_image,
-                       nutritiontypes.nutrition_name,
-                       ingredients.ingredients_name
+                meals.calories, meals.protein, meals.fat, meals.carbonhydrate,
+                meals.path_to_image,
+                nutritiontypes.nutrition_name,
+                ingredients.ingredients_name
                 FROM meals
                 JOIN nutritiontypes ON meals.type_of_nutrition_id = nutritiontypes.nutrition_type_id
-                JOIN ingredients ON meals.meal_id = ingredients.ingredients_id
+                LEFT JOIN linkingMealIngredients ON meals.meal_id = linkingMealIngredients.meal_id
+                LEFT JOIN ingredients ON linkingMealIngredients.ingredient_id = ingredients.ingredients_id
                 WHERE meals.meal_id = {$mealID}";
     
         $result = $conn->query($sql);
@@ -30,11 +31,11 @@
                     'meal_name' => $row["meal_name"],
                     'calories' => $row["calories"],
                     'protein' => $row["protein"],
+                    'fat' => $row['fat'],
                     'carbonhydrate' => $row['carbonhydrate'],
                     'path_to_image' => $row['path_to_image'],
                     'nutrition_name' => $row['nutrition_name'],
-                    'ingredients_name' => $row['ingredients_name'],
-                   
+                    'ingredients_name' => ($row['ingredients_name'] === null) ? "keine besonderen Inhaltsstoffe" : $row['ingredients_name'],   
                 );
             }
         } else {
