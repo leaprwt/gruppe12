@@ -28,7 +28,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
-          <li><a href="/statistiken">Statistiken</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </nav>
       <!--Toggle Icon-->
@@ -42,7 +42,7 @@
           <li><a href="/bibliothek">Bibliothek</a></li>
           <li><a href="/mensaplan">Mensaplan</a></li>
           <li><a href="/datenerfassen">Daten erfassen</a></li>
-          <li><a href="/statistiken">Statistiken</a></li>
+          <li><a href="/statistik">Statistiken</a></li>
         </ul>
       </div>
     </header>
